@@ -1,0 +1,9 @@
+{
+  "username": "admin",
+  "email": "admin@example.com",
+  "password": "Aa@123456",
+  "firstName": "string",
+  "lastName": "string",
+  "title": "string",
+  "birthDate": "2023-06-30T21:39:46.417Z"
+}
