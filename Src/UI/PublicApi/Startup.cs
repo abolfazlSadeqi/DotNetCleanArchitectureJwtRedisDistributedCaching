@@ -25,7 +25,7 @@ namespace PublicApi
 
            
 
-            HelperBaseService.ConfigureService(services);
+            HelperBaseService.ConfigureService(services, Configuration);
 
             HelperAuthentication.ConfigureService(services, Configuration);
 

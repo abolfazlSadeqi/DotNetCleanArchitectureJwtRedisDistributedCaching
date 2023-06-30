@@ -17,18 +17,23 @@ namespace Common.UI.Method
 {
     public class HelperBaseService
     {
-        public static void ConfigureService(IServiceCollection services)
+        public static void ConfigureService(IServiceCollection services, IConfiguration configuration)
         {
+            var b = configuration.GetConnectionString("RedisConnection");
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = configuration.GetConnectionString("RedisConnection");
+            });
 
             services.AddControllers();
             services.AddHttpContextAccessor();
 
-           // services.AddControllers();
+            // services.AddControllers();
 
             services.AddEndpointsApiExplorer();
 
-              //services.AddControllers();
-           // services.AddEndpointsApiExplorer();
+            //services.AddControllers();
+            // services.AddEndpointsApiExplorer();
             //  services.AddSwaggerGen();
 
 
