@@ -13,48 +13,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Common.UI.Method
+namespace Common.UI.Method;
+
+public class HelperBaseService
 {
-    public class HelperBaseService
+    public static void ConfigureService(IServiceCollection services, IConfiguration configuration)
     {
-        public static void ConfigureService(IServiceCollection services, IConfiguration configuration)
+        
+        services.AddStackExchangeRedisCache(options =>
         {
-            var b = configuration.GetConnectionString("RedisConnection");
-            services.AddStackExchangeRedisCache(options =>
-            {
-                options.Configuration = configuration.GetConnectionString("RedisConnection");
-            });
+            options.Configuration = configuration.GetConnectionString("RedisConnection");
+        });
 
-            services.AddControllers();
-            services.AddHttpContextAccessor();
+        services.AddControllers();
+        services.AddHttpContextAccessor();
 
-            // services.AddControllers();
+        // services.AddControllers();
 
-            services.AddEndpointsApiExplorer();
+        services.AddEndpointsApiExplorer();
 
-            //services.AddControllers();
-            // services.AddEndpointsApiExplorer();
-            //  services.AddSwaggerGen();
+        //services.AddControllers();
+        // services.AddEndpointsApiExplorer();
+        //  services.AddSwaggerGen();
 
 
-            //services.AddSwaggerGen(options =>
-            //{
-            //    options.SwaggerDoc("v1", new OpenApiInfo
-            //    {
-            //        Version = "v1",
-            //        Title = "CURD",
-            //        Description = "Demo API - Abolfazl Sadeghi",
-            //    });
-            //});
+        //services.AddSwaggerGen(options =>
+        //{
+        //    options.SwaggerDoc("v1", new OpenApiInfo
+        //    {
+        //        Version = "v1",
+        //        Title = "CURD",
+        //        Description = "Demo API - Abolfazl Sadeghi",
+        //    });
+        //});
 
-            services.AddControllersWithViews(options =>
-                        options.Filters.Add<ApiExceptionFilterAttribute>())
-                            .AddFluentValidation(x => x.AutomaticValidationEnabled = false);
+        services.AddControllersWithViews(options =>
+                    options.Filters.Add<ApiExceptionFilterAttribute>())
+                        .AddFluentValidation(x => x.AutomaticValidationEnabled = false);
 
-
-
-        }
 
 
     }
+
+
 }

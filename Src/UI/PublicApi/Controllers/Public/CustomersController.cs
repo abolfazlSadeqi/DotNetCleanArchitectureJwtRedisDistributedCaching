@@ -35,6 +35,8 @@ public class CustomersController : ApiControllerBase
     #region
     private async Task<ActionResult<PaginatedList<CustomerDto>>> _GetCustomersWithPagination([FromQuery] GetCustomersWithPaginationQuery query)
     {
+        _logger.LogInformation("start_Customer");
+        
 
         if (!_DistributedCache.TryGetValue(ListCache.CustomerCacheKey, out IEnumerable<CustomerDto>? CustomerDtos))
         {
@@ -47,12 +49,17 @@ public class CustomersController : ApiControllerBase
 
             await _DistributedCache.SetAsync(ListCache.CustomerCacheKey, _listCustomerDtoalls.Result.Items);
 
+            _logger.LogInformation("Count_Customer =" + _listCustomerDtoalls.Result.Items.Count);
+
             return await Mediator.Send(query);
         }
 
         var item = CustomerDtos.Skip((query.PageNumber - 1) * query.PageSize).Take(query.PageSize).ToList();
         PaginatedList<CustomerDto> paginatedList = new PaginatedList<CustomerDto>(
            item, CustomerDtos.Count(), query.PageNumber, query.PageSize);
+
+        _logger.LogInformation("Count_Customer=" + item.Count);
+
 
         return new ActionResult<PaginatedList<CustomerDto>>(paginatedList);
     }
