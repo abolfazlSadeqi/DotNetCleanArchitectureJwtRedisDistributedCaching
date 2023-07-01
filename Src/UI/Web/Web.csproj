@@ -10,6 +10,8 @@
     <PackageReference Include="Hangfire" Version="1.8.3" />
     <PackageReference Include="Hangfire.AspNetCore" Version="1.8.3" />
     <PackageReference Include="Hangfire.SqlServer" Version="1.8.3" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="7.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.7" />
     <PackageReference Include="Stimulsoft.Reports.Web.NetCore" Version="2023.2.8" />
   </ItemGroup>
 

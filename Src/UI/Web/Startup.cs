@@ -1,20 +1,36 @@
 ﻿
 using Hangfire;
 using Common.Hangfire;
+using Models.Setting;
 
 namespace Web;
 
 public class Startup
 {
-    public Startup(IConfiguration configuration)
+    //public Startup(IConfiguration configuration)
+    //{
+    //    Configuration = configuration;
+    //}
+
+    public Startup(Microsoft.Extensions.Hosting.IHostingEnvironment env)
     {
-        Configuration = configuration;
+        var builder = new ConfigurationBuilder()
+        .SetBasePath(env.ContentRootPath)
+        .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+        .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: false,
+       reloadOnChange: true)
+        .AddEnvironmentVariables();
+        Configuration = builder.Build();
+        //Configuration = configuration;
     }
+
 
     public IConfiguration Configuration { get; }
 
     public void ConfigureServices(IServiceCollection services)
     {
+
+
         services.AddControllers();
         services.AddHttpContextAccessor();
 
@@ -25,6 +41,9 @@ public class Startup
         services.AddControllersWithViews();
         services.AddHangfire(x => x.UseSqlServerStorage(Configuration.GetConnectionString("DefaultConnection")));
         services.AddHangfireServer();
+
+        services.AddOptions();
+        services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
     }
 

@@ -27,7 +27,6 @@
 
   <ItemGroup>
     <Folder Include="Log\" />
-    <Folder Include="UI\Classes\" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,35 @@
+﻿@model Models.Setting.AppSettings
+
+
+<h4>AppSettings</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AppVersion" class="control-label"></label>
+                <input asp-for="AppVersion" class="form-control" />
+                <span asp-validation-for="AppVersion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AppId" class="control-label"></label>
+                <input asp-for="AppId" class="form-control" />
+                <span asp-validation-for="AppId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AppName" class="control-label"></label>
+                <input asp-for="AppName" class="form-control" />
+                <span asp-validation-for="AppName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
