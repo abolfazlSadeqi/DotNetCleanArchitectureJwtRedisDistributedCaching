@@ -1,4 +1,4 @@
-Implementing CleanArchitecture authentication and authorization in  Web Api by using Identity and JWT and RedisDistributedCaching in in  Web Api  and Logging with elasticsearch in in  Web Api   and ReportBusinessObjectStimulSoft in Web
+Implementing CleanArchitecture authentication and authorization in  Web Api by using Identity and JWT and RedisDistributedCaching in in  Web Api  and Logging with elasticsearch in  Web Api   and ReportBusinessObjectStimulSoft in Web and HangFire in Web Mvc
 
 ## Tech Specification:
 
@@ -179,7 +179,12 @@ More details(About Implementing Defined distributed cache  in  Web Api by using 
 
 https://github.com/abolfazlSadeqi/CurdRedisDistributedCaching/blob/main/README.md
 
+# Hangfire
+   Hangfire is an open-source framework that  An easy way to perform background processing in .NET and .NET Core applications. No Windows Service or separate process required.
+   
+More details(About Implementing Hangfire  in  Web Mvc)
 
+https://github.com/abolfazlSadeqi/HangFireNetCoreTutorial/blob/master/README.md
 
 # BusinessObject in StimulSoft
 
