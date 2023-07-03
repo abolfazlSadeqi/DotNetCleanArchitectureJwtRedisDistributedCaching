@@ -5,6 +5,8 @@ using Application.Customers.Commands.UpdateCustomer;
 using Application.Customers.Queries.GetCustomeresWithPagination;
 using Common.HelperDistributedCache;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using Models;
@@ -12,7 +14,7 @@ using PublicApi.Controllers.Base;
 using System;
 
 namespace PublicAPI.Controllers.Public;
-[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "AdminLevel2")]
 public class CustomersController : ApiControllerBase
 {
     private readonly ILogger<CustomersController> _logger;
