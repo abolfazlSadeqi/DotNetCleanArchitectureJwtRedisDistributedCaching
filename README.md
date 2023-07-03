@@ -12,7 +12,7 @@ Implementing CleanArchitecture authentication and authorization in  Web Api by u
   
 5.Read And Write Config  in  Web Mvc
   
-6.TDD(XUnit)
+6.TDD(XUnit) include 1.UnitTest 2.IntegrationTests
   
 7.BDD (SpecFlow)
   
