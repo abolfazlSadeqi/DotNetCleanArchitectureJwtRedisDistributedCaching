@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 namespace Common.HelperLog;
 public static class LoggerSerilogELK
 {
+    ///I used of this is post(https://dev.to/moe23/net-6-webapi-intro-to-elasticsearch-kibana-step-by-step-p9l) ,customized based on my own code
     public static void ConfigureLogging(IConfiguration configuration)
     {
 
