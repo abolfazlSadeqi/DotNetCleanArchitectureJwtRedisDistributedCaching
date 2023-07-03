@@ -161,7 +161,6 @@ Example:
  }
  ```
 
-
 ## JWT: 
 JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object.
 ## Identity : 
@@ -202,6 +201,13 @@ This is  a very esay simple application ReportBusinessObject to and .Net7 and St
  
 
 
+## Clean Architecture
 
+Install Clean.Architecture.Solution.Template on nuget
+
+I used of this is template Clean Architecture([Clean.Architecture.Solution.Template][1] ),customized based on my own code
+
+
+[1]: https://www.nuget.org/packages/Clean.Architecture.Solution.Template
 
 
