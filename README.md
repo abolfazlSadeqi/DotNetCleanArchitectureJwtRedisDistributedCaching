@@ -6,7 +6,7 @@ Implementing CleanArchitecture authentication and authorization in  Web Api by u
   
 2.RedisDistributedCaching in  Web Api
   
-3.Logging with elasticsearch  
+3.Logging with Serilog and elasticsearch in  Web Api   
   
 4.ReportBusinessObjectStimulSoft  in  Web Mvc
   
