@@ -12,7 +12,7 @@ using PublicApi.Controllers.Base;
 using System;
 
 namespace PublicAPI.Controllers.Public;
-
+[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
 public class CustomersController : ApiControllerBase
 {
     private readonly ILogger<CustomersController> _logger;

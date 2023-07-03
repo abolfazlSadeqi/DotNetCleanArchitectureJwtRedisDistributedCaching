@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using static System.Net.WebRequestMethods;
 
 namespace Common.UI.Classes;
 ///Add Base Classes:I used of this is post(https://stackoverflow.com/a/67917167/10193401) ,customized based on my own code
