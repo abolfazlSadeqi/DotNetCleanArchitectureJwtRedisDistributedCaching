@@ -63,7 +63,11 @@ public class Startup
             //  await ApplicationDbContextSeed.SeedSampleDataAsync(dbContext);
         }
 
-
+       
+        if (env.IsDevelopment())
+        {
+            app.UseDeveloperExceptionPage();
+        }
         // Configure the HTTP request pipeline.
         if (env.IsDevelopment())
         {
@@ -79,11 +83,12 @@ public class Startup
 
         app.UseHttpsRedirection();
 
+
+        app.UseRouting();
         app.UseAuthentication();
         app.UseAuthorization();
 
 
-        app.UseRouting();
 
 
         //app.UseSwaggerUI(c =>
